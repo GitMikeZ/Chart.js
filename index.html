@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>My Chart.js Chart</title>
+</head>
+<body>
+  <center>
+    <u></h><h1>BLOCK-CHICKEN // THE (REAL-TIME) HEALTHY FARMERS NETWORK</h1></u>
+  </center>
+  <br>
+  <br>  
+  <div class="row">
+    <div class="container col-md-6">
+      <canvas id="barChart"></canvas>
+    </div>
+    <div class="container col-md-6">
+      <canvas id="barChart1"></canvas>
+    </div>
+  </div>
+  <div>
+  <br>
+  <div class="row">
+      <div class="container col-md-12">
+      <canvas id="pieChart"></canvas>
+  </div>
+  <script>
+    var myChart = document.getElementById('barChart').getContext('2d');
+
+    // barChart --------------------------------------------------------------
+    new Chart(barChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['Cattle', 'Cow', 'Pig', 'Lamb', 'Goat', 'Horse'],
+        datasets:[{
+          label:'Population',
+          data:[
+            217594,
+            181045,
+            153060,
+            106519,
+            105162, 
+            95072
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Animal Population',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true,
+          showAllTooltips: true
+        }
+      }
+    });
+
+  // ------------------------------------------------------------
+  var myChart1 = document.getElementById('barChart1').getContext('2d');
+
+  // barChart --------------------------------------------------------------
+  new Chart(barChart1, {
+    type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+    data:{
+      labels:['Grain', 'Oats', 'Free-range Grass'],
+      datasets:[{
+        label:'Food Sources',
+        data:[
+          250000,
+          123100,
+          430111,
+        ],
+        //backgroundColor:'green',
+        backgroundColor:[
+          'rgba(255, 159, 64, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
+          'rgba(255, 159, 64, 0.6)'
+        ],
+        borderWidth:1,
+        borderColor:'#777',
+        hoverBorderWidth:3,
+        hoverBorderColor:'#000'
+      }]
+    },
+    options:{
+      title:{
+        display:true,
+        text:'Food Sources',
+        fontSize:25
+      },
+      legend:{
+        display:true,
+        position:'right',
+        labels:{
+          fontColor:'#000'
+        }
+      },
+      layout:{
+        padding:{
+          left:50,
+          right:0,
+          bottom:0,
+          top:0
+        }
+      },
+      tooltips:{
+        enabled:true
+      }
+    }
+  });
+
+  var myChart3 = document.getElementById('pieChart').getContext('2d');
+
+  // pieChart --------------------------------------------------------------
+  new Chart(pieChart, {
+    type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+    data:{
+      labels:['Influenza', 'E. Coli', 'Mad Cow', 'Salmonellosis'],
+      datasets:[{
+        label:'Food Sources',
+        data:[
+          20,
+          10,
+          40,
+          30
+        ],
+        //backgroundColor:'green',
+        backgroundColor:[
+          "#878BB6",
+          "#4ACAB4",
+          "#FF8153",
+          "#FFEA88"
+        ],
+        borderWidth:1,
+        borderColor:'#777',
+        hoverBorderWidth:3,
+        hoverBorderColor:'#000'
+      }]
+    },
+    options:{
+      title:{
+        display:true,
+        text:'Medical History',
+        fontSize:25
+      },
+      legend:{
+        display:true,
+        position:'right',
+        labels:{
+          fontColor:'#000'
+        }
+      },
+      layout:{
+        padding:{
+          left:50,
+          right:0,
+          bottom:0,
+          top:0
+        }
+      },
+      tooltips:{
+        enabled:true
+      }
+    }
+  });
+</script>
+</body>
+</html>
